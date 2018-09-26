@@ -58,8 +58,8 @@ object InfoFlowMain {
       new PrintWriter(file)
     }
     jsonFile.append("{\n")
-    jsonFile.append("    \"Vertex File\": \" +verticesFilename +\",\n")
-    jsonFile.append("    \"Edge File\": \" +edgesFilename +\"\n")
+    jsonFile.append("    \"Vertex File\": \"" +verticesFilename +"\",\n")
+    jsonFile.append("    \"Edge File\": \"" +edgesFilename +"\"\n")
     jsonFile.append("}\n")
     jsonFile.flush
   }
