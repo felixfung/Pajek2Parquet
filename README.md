@@ -17,6 +17,8 @@ The json file has content:
 
 ## How to use
 
+Below is simple instruction to run this in a local cluster
+
 ### Set up HDFS
 
 ```
