@@ -13,7 +13,7 @@ import org.graphframes._
 
 import java.io._
 
-object InfoFlowMain {
+object Pajek2ParquetMain {
   def main( args: Array[String] ): Unit = {
 
   /***************************************************************************
