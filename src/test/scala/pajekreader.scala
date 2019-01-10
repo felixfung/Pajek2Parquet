@@ -21,9 +21,9 @@ class PajekReaderTest extends FunSuite with BeforeAndAfter
 
   test("Throw error when reading wrong file") {
     val thrown = intercept[Exception] {
-      val dummy = PajekReader(ss,"Nets/dummy")
+      val dummy = PajekReader(ss,"Nets/dummy.net")
     }
-    assert( thrown.getMessage === "Cannot open file Nets/dummy" )
+    assert( !thrown.getMessage.isEmpty )
   }
 
   test("Read trivial network with comment") {
