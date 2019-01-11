@@ -34,6 +34,8 @@ object PajekReader
       // read in Pajek file and remove comments
       val linedFile = ss.sparkContext.textFile(filename).zipWithIndex
       val reducedLinedFile = removeComment(linedFile)
+	  reducedLinedFile.localCheckpoint
+	  reducedLinedFile.cache
 
       // get the line intervals for each specification section
       val( vertexSpecs, edgeSpecs, edgesListSpecs )
@@ -54,6 +56,8 @@ object PajekReader
       val edgesList = getEdgesList(
         getSectionLines( reducedLinedFile, edgesListSpecs ) )
       val edges = edgesSingular.union(edgesList)
+	  edges.localCheckpoint
+	  edges.cache
       checkEdgesRange( edges, nodeNumber )
 
       // import spark.implicits._ to use toDF()
